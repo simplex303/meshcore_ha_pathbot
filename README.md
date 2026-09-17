@@ -29,9 +29,12 @@ I've looked at the path response behaviour of the MeshCore-Bot and further added
 ## YAML Edit
 Within the YAML file there are some parts that need to be edited to customise this automation to your needs.
 
-[CHANNEL_ID] The channel ID for the #testing channel added to the companion device.\
-[CODE]  Text that the automation will look for in the Meshcore messages it recieves. This will trigger a automated message detailing the message path.\
-[LOCATON] The location of the pathbot, used in message responses.
+[CHANNEL_ID]\ 
+The channel ID for the #testing channel added to the companion device.\
+[CODE]\  
+Text that the automation will look for in the Meshcore messages it recieves. This will trigger a automated message detailing the message path.\
+[LOCATON]\ 
+The location of the pathbot, used in message responses.
 
 ## USAGE
 The automation will only respond to messages in the channel you setup, usually #testing.\
