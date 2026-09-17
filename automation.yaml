@@ -1,0 +1,72 @@
+alias: Meshcore Pathbot Automation
+description: >-
+  Responds with hops and path when '[CODE]' appears in #testing ([CHANNEL_NUMBER]) channel, or
+  with usage instructions when '!bot' appears.
+triggers:
+  - alias: When a MeshCore message is received
+    trigger: event
+    event_type: meshcore_message
+    event_data:
+      message_type: channel
+      channel_idx: [CHANNEL_NUMBER]
+conditions:
+  - condition: template
+    value_template: '{{ not (trigger.event.data.outgoing | default(false)) }}'
+    alias: Ignore our own outgoing messages
+  - condition: or
+    conditions:
+      - condition: template
+        value_template: '{{ (trigger.event.data.message | lower) is search(''\\b[CODE]\\b'') }}'
+        alias: If message contains the word "[CODE]"
+      - condition: template
+        value_template: '{{ (trigger.event.data.message | lower) is search(''!bot'') }}'
+        alias: If message contains "!bot"
+  - condition: template
+    value_template: |
+      {{ trigger.event.data.rx_log_data is defined
+               and trigger.event.data.rx_log_data | length > 0 }}
+    alias: If it has rx_log_data
+actions:
+  - variables:
+      entries: '{{ trigger.event.data.rx_log_data[:1] }}'
+  - variables:
+      paths_summary: |-
+        {%- set ns = namespace(lines=[]) -%}
+        {%- for rx in entries -%}
+          {%- set hops = rx.path_len | int -%}
+          {%- set hex = rx.path | string | upper -%}
+          {%- if hops == 0 or hex | length == 0 -%}
+            {%- set path_str = 'direct' -%}
+          {%- else -%}
+            {%- set chunk = (hex | length) // hops -%}
+            {%- set parts = hex | batch(chunk) | map('join') | list -%}
+            {%- set path_str = parts | join(', ') -%}
+          {%- endif -%}
+          {%- set ns.lines = ns.lines + ['Hops: ' ~ hops ~ '\nPath: ' ~ path_str] -%}
+        {%- endfor -%}
+        {{ ns.lines | join('\n---\n') }}
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 0
+      milliseconds: '{{ range(2000, 4000) | random }}'
+    alias: Delay random amount
+  - choose:
+      - conditions:
+          - condition: template
+            value_template: '{{ (trigger.event.data.message | lower) is search(''!bot'') }}'
+        sequence:
+          - action: meshcore.send_channel_message
+            data:
+              channel_idx: 1
+              message: >-
+                @[{{ trigger.event.data.sender_name }}] Use "[CODE]" for [LOCATION]
+    default:
+      - action: meshcore.send_channel_message
+        data:
+          channel_idx: 1
+          message: |-
+            @[{{ trigger.event.data.sender_name }}] recv [LOCATON]
+            {{ paths_summary }}
+mode: parallel
+max: 10
