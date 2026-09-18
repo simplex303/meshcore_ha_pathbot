@@ -37,7 +37,7 @@ Text that the automation will look for in the Meshcore messages it receives, wit
 Will trigger on any upper or lower case combination.\
 When this text is seen the automation is triggered an automated message detailing the message path is sent.
 
-[LOCATON] \
+[LOCATION] \
 The location of the pathbot, used in message responses.
 
 ## USAGE
