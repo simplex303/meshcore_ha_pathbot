@@ -43,7 +43,8 @@ The location of the pathbot, used in message responses.
 ## USAGE
 The automation will only respond to messages in the channel you setup, usually #testing.\
 And it will only respond to "!bot" or the "code" you setup within the automation.\
-The code is a short text string that represents the area your pathbot is operating in.\
+
+The "code" is a short text string that represents the area your pathbot is operating in.\
 Pick a code that is unique across the whole Meshcore network.\
 AKL = Auckland\
 PNL = New Plymouth\
