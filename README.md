@@ -1,4 +1,4 @@
-# meshcore_homeassistant_pathbot
+# meshcore_ha_pathbot
 Home Assistant automation that works with the Meshcore addon to create a automatic path bot message reply.
 
 I have a companion Meshcore radio connected to my Home Assistant installation, using the Meshcore HA addon.
