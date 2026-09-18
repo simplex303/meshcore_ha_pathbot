@@ -59,7 +59,7 @@ Automation will respond with:
 ```
 
 ### code
-If a message in #testing is received that matches the "CODE".
+If a message in #testing is received that matches the "CODE".\
 The automation will use the message path details to replay with the path the message took to it.
 
 Automation will reply with:
