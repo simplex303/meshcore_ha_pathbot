@@ -49,10 +49,8 @@ Automation will respond with:
 ```
 @SENDER Use "CODE" for "LOCATION"
 ```
-If a message in #testing is received that says "CODE"\
-```
-Message: "CODE"
-```
+If a message in #testing is received that says "CODE"
+
 Automation will reply with:
 ```
 @SENDER recv [LOCATON]
