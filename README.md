@@ -44,6 +44,7 @@ The location of the pathbot, used in message responses.
 The automation will only respond to messages in the channel you setup, usually #testing.\
 And it will only respond to "!bot" or the "code" you setup within the automation.
 
+### !bot
 If a message in #testing is received that says "!bot"\
 Automation will respond with:
 ```
@@ -51,6 +52,7 @@ Automation will respond with:
 ```
 Allows users to find the pathbots that are reachable from their location.
 
+### code
 If a message in #testing is received that says "CODE"
 
 Automation will reply with:
