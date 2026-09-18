@@ -51,15 +51,16 @@ PNL = New Plymouth\
 etc
 
 ### !bot
+Allows users to find the pathbots that are reachable from their location.\
 If a message in #testing is received that says "!bot"\
 Automation will respond with:
 ```
 @SENDER Use "CODE" for "LOCATION"
 ```
-Allows users to find the pathbots that are reachable from their location.
 
 ### code
-If a message in #testing is received that matches the "CODE"
+If a message in #testing is received that matches the "CODE".
+The automation will use the message path details to replay with the path the message took to it.
 
 Automation will reply with:
 ```
