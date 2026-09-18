@@ -33,8 +33,9 @@ Within the YAML file there are some parts that need to be edited to customise th
 The channel ID for the #testing channel added to the companion device.
 
 [CODE]  \
-Text that the automation will look for in the Meshcore messages it receives. Will trigger on any upper or lower case combination.
-This will trigger a automated message detailing the message path.
+Text that the automation will look for in the Meshcore messages it receives, within the setup channel ID.\
+Will trigger on any upper or lower case combination.\
+When this text is seen the automation is triggered an automated message detailing the message path is sent.
 
 [LOCATON] \
 The location of the pathbot, used in message responses.
@@ -49,6 +50,9 @@ Automation will respond with:
 @SENDER Use "CODE" for "LOCATION"
 ```
 If a message in #testing is received that says "CODE"\
+```
+Message: "CODE"
+```
 Automation will reply with:
 ```
 @SENDER recv [LOCATON]
