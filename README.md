@@ -24,7 +24,7 @@ A Home Assistant automation written in YAML
 [meshcore-bot](https://github.com/agessaman/meshcore-bot)\
 A Python bot with a full set of tools and features. Does way more than my simple automation.
 
-I've looked at the path response behaviour of the MeshCore-Bot and further added to the Pathbot YAML automation.
+I've looked at the path response behaviour of the MeshCore-Bot and further added/edited the Pathbot YAML automation.
 
 ## YAML Edit
 Within the YAML file there are some parts that need to be edited to customise this automation to your needs.
