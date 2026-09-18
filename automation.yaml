@@ -1,6 +1,6 @@
 alias: Meshcore Pathbot Automation
 description: >-
-  Responds with hops and path when '[CODE]' appears in #testing ([CHANNEL_NUMBER]) channel, or
+  Responds with hops and path when '[CODE]' appears in #testing ([CHANNEL_ID]) channel, or
   with usage instructions when '!bot' appears.
 triggers:
   - alias: When a MeshCore message is received
