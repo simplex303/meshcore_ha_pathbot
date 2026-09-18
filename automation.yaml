@@ -8,7 +8,7 @@ triggers:
     event_type: meshcore_message
     event_data:
       message_type: channel
-      channel_idx: [CHANNEL_NUMBER]
+      channel_idx: [CHANNEL_ID]
 conditions:
   - condition: template
     value_template: '{{ not (trigger.event.data.outgoing | default(false)) }}'
