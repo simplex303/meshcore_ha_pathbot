@@ -49,6 +49,8 @@ Automation will respond with:
 ```
 @SENDER Use "CODE" for "LOCATION"
 ```
+Allows users to find the pathbots that are reachable from their location.
+
 If a message in #testing is received that says "CODE"
 
 Automation will reply with:
